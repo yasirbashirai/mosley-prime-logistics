@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Mosley Prime Logistics brand tokens ─────────────────────────── */
+@theme {
+  /* Navy — authority / structure (logo primary) */
+  --color-navy: #01193e;
+  --color-navy-950: #010e24;
+  --color-navy-900: #011536;
+  --color-navy-800: #04244f;
+  --color-navy-700: #0a3468;
+  --color-navy-600: #124684;
+  --color-navy-100: #dbe4f0;
+
+  /* Gold — primary action (logo secondary) */
+  --color-gold: #efad01;
+  --color-gold-400: #ffc42e;
+  --color-gold-300: #ffd35e;
+  --color-gold-600: #d69b00;
+
+  /* Neutrals */
+  --color-ink: #14171c;
+  --color-steel: #5b6572;
+  --color-mist: #f4f6f9;
+
+  --font-heading: var(--font-montserrat), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Headline utility — condensed, uppercase, tight */
+.headline {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+/* Gold gradient used on primary CTAs */
+.btn-gold {
+  background-image: linear-gradient(135deg, #ffc42e 0%, #efad01 55%, #d69b00 100%);
+  color: #01193e;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 8px 22px -8px rgba(239, 173, 1, 0.55);
+}
+.btn-gold:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px -8px rgba(239, 173, 1, 0.65);
+}
+
+/* Navy gradient used on secondary CTAs */
+.btn-navy {
+  background-image: linear-gradient(135deg, #0a3468 0%, #01193e 100%);
+  color: #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 8px 22px -8px rgba(1, 25, 62, 0.5);
+}
+.btn-navy:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* Navy section gradient */
+.bg-navy-gradient {
+  background-image: linear-gradient(160deg, #04244f 0%, #01193e 45%, #010e24 100%);
+}
+
+/* Subtle top gold rule used on cards */
+.card-rule {
+  position: relative;
+  overflow: hidden;
+}
+.card-rule::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #efad01, #ffc42e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.card-rule:hover::before {
+  transform: scaleX(1);
+}
+
+/* Form inputs on dark sections */
+.input-dark {
+  background: #ffffff;
+  border: 1px solid #d5dbe4;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  color: #14171c;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input-dark:focus {
+  border-color: #efad01;
+  box-shadow: 0 0 0 3px rgba(239, 173, 1, 0.25);
+}
+
+/* Form inputs on light sections */
+.input-light {
+  background: #ffffff;
+  border: 1px solid #cfd6e0;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  color: #14171c;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input-light:focus {
+  border-color: #01193e;
+  box-shadow: 0 0 0 3px rgba(1, 25, 62, 0.15);
+}
+
+/* Fade-up entrance for hero content */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+.fade-up-delay-1 {
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+.fade-up-delay-2 {
+  animation: fadeUp 0.7s 0.3s ease both;
 }
