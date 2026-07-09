@@ -70,10 +70,10 @@ export function QuoteSection({ id = "quote" }) {
           </p>
           <div className="mt-8 relative rounded-xl overflow-hidden border border-white/10 shadow-2xl max-w-md">
             <Image
-              src="/images/van-quote.png"
-              alt="Mosley Prime Logistics branded Sprinter van"
-              width={470}
-              height={400}
+              src="/images/van-moving.jpg"
+              alt="Mosley Prime Logistics branded Sprinter van in motion"
+              width={1600}
+              height={1216}
               className="w-full h-56 object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/90 to-transparent p-4">

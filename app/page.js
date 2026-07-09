@@ -62,17 +62,24 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="bg-navy-gradient relative overflow-hidden">
+      <section className="relative overflow-hidden bg-navy">
+        {/* Full-bleed branded van + Miami skyline background */}
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="Mosley Prime Logistics branded Sprinter van on the Florida waterfront"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[70%_center]"
+        />
+        {/* Legibility overlay — dark navy on the left, van stays visible right */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, #fff 1px, transparent 1px), linear-gradient(#fff 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
+          className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/75 to-navy-900/15"
           aria-hidden="true"
         />
-        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy-950/80 to-transparent" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-32 grid lg:grid-cols-2 gap-12 items-center min-h-[560px]">
           <div>
             <h1 className="headline text-white text-4xl sm:text-5xl xl:text-[3.4rem] fade-up">
               Delivering What Matters.
@@ -114,19 +121,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative fade-up-delay-1">
-            <div className="absolute -inset-6 bg-gold/10 rounded-3xl blur-2xl" aria-hidden="true" />
-            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
-              <Image
-                src="/images/van-branded.png"
-                alt="Mosley Prime Logistics branded Mercedes Sprinter van in Florida"
-                width={470}
-                height={300}
-                priority
-                className="w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-5 left-6 right-6 sm:left-10 sm:right-auto bg-white rounded-xl shadow-xl px-5 py-3.5 flex items-center gap-3">
+          {/* Right column intentionally open — the branded van in the background photo owns this space */}
+          <div className="hidden lg:flex items-end justify-end self-end fade-up-delay-2">
+            <div className="bg-white/95 backdrop-blur rounded-xl shadow-2xl px-5 py-3.5 flex items-center gap-3">
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy text-gold shrink-0">
                 <Icon name="van" className="w-5 h-5" />
               </span>
@@ -255,10 +252,10 @@ export default function HomePage() {
             </p>
             <div className="mt-8 relative rounded-xl overflow-hidden border border-white/10 shadow-2xl max-w-md">
               <Image
-                src="/images/van-quote.png"
-                alt="Mosley Prime Logistics Sprinter van ready for dispatch"
-                width={470}
-                height={400}
+                src="/images/van-moving.jpg"
+                alt="Mosley Prime Logistics Sprinter van in motion on the highway"
+                width={1600}
+                height={1216}
                 className="w-full h-60 object-cover"
               />
             </div>

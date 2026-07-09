@@ -80,19 +80,19 @@ export default function AboutPage() {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/van-branded.png"
+                src="/images/van-side.jpg"
                 alt="Mosley Prime Logistics branded Sprinter van"
-                width={470}
-                height={300}
-                className="w-full object-cover"
+                width={1600}
+                height={1237}
+                className="w-full h-72 object-cover"
               />
             </div>
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <Image src="/images/card-organized.png" alt="Organized Sprinter van cargo area" width={410} height={350} className="w-full h-40 object-cover" />
+                <Image src="/images/van-boxes.jpg" alt="Mosley Prime van loaded with packages" width={1600} height={1216} className="w-full h-40 object-cover" />
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <Image src="/images/card-professional.png" alt="Professional freight handoff at the dock" width={410} height={350} className="w-full h-40 object-cover" />
+                <Image src="/images/van-moving.jpg" alt="Mosley Prime van in motion on the highway" width={1600} height={1216} className="w-full h-40 object-cover" />
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/Icons";
 import QuoteForm from "@/components/QuoteForm";
 import { PageHero } from "@/components/Sections";
@@ -36,7 +37,16 @@ export default function QuotePage() {
                 </li>
               ))}
             </ol>
-            <div className="mt-8 bg-navy rounded-xl p-6 text-white">
+            <div className="mt-8 rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/van-boxes.jpg"
+                alt="Mosley Prime Logistics van being loaded with packages"
+                width={1600}
+                height={1216}
+                className="w-full h-52 object-cover"
+              />
+            </div>
+            <div className="mt-6 bg-navy rounded-xl p-6 text-white">
               <p className="font-heading font-extrabold uppercase text-sm tracking-wide text-gold">Prefer to talk it through?</p>
               <a href={site.phoneHref} className="mt-2 flex items-center gap-2 text-lg font-bold hover:text-gold transition-colors">
                 <Icon name="phone" className="w-5 h-5 text-gold" /> {site.phone}
