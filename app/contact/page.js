@@ -12,7 +12,7 @@ const cards = [
   { icon: "phone", title: "Call Us", line1: site.phone, href: site.phoneHref, sub: "Fastest way to reach dispatch" },
   { icon: "mail", title: "Email Us", line1: site.email, href: site.emailHref, sub: "Quotes, bookings & general inquiries" },
   { icon: "clock", title: "Business Hours", line1: "Mon–Fri, 8AM–5PM", sub: "After-hours pickups by arrangement" },
-  { icon: "pin", title: "Based In", line1: "Windermere, FL", sub: "Serving all of Florida & Georgia" },
+  { icon: "pin", title: "Service Area", line1: "Serving Florida & Georgia", sub: "Statewide Sprinter van coverage" },
 ];
 
 export default function ContactPage() {

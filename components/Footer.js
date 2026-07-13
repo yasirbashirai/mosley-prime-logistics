@@ -68,10 +68,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2.5">
               <Icon name="pin" className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-              <span>
-                {site.address.city}, {site.address.state}
-                <span className="block text-navy-100/60">Serving Florida &amp; Georgia</span>
-              </span>
+              <span>Serving Florida &amp; Georgia</span>
             </li>
             <li className="flex items-center gap-2.5">
               <Icon name="clock" className="w-4 h-4 text-gold shrink-0" /> {site.hours}

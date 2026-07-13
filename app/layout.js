@@ -35,12 +35,30 @@ export const metadata = {
     "white glove delivery",
     "Mosley Prime Logistics",
   ],
+  applicationName: site.name,
   openGraph: {
     type: "website",
+    url: site.url,
     siteName: site.name,
+    locale: "en_US",
     title: "Mosley Prime Logistics | Delivering What Matters. On Time. Every Time.",
     description:
       "Premier Sprinter van logistics across Florida & Georgia — on-demand routes, B2B supply, medical transport, white glove, reverse logistics, and palletized freight.",
+    images: [
+      {
+        url: "/images/og-share.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mosley Prime Logistics — Every Mile Matters",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mosley Prime Logistics | Sprinter Van Delivery Across Florida & Georgia",
+    description:
+      "Fast, reliable, secure Sprinter van delivery across Florida & Georgia. On time. Every time.",
+    images: ["/images/og-share.jpg"],
   },
 };
 
@@ -53,14 +71,8 @@ const jsonLd = {
   url: site.url,
   telephone: "+1-689-777-6885",
   email: site.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.street,
-    addressLocality: site.address.city,
-    addressRegion: site.address.state,
-    postalCode: site.address.zip,
-    addressCountry: "US",
-  },
+  image: `${site.url}/images/og-share.jpg`,
+  logo: `${site.url}/images/logo.jpg`,
   areaServed: [
     { "@type": "State", name: "Florida" },
     { "@type": "State", name: "Georgia" },
